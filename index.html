@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Present Tense – Complete Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Baloo+2:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1923;
+    --card: #162130;
+    --card2: #1c2d3f;
+    --accent1: #00d4ff;
+    --accent2: #ff6b6b;
+    --accent3: #ffd93d;
+    --accent4: #6bcb77;
+    --accent5: #c77dff;
+    --text: #e8f4fd;
+    --muted: #8fa8be;
+    --border: rgba(0,212,255,0.2);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Stars background */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(0,212,255,0.05) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(199,125,255,0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* HERO */
+  .hero {
+    position: relative;
+    text-align: center;
+    padding: 60px 20px 50px;
+    z-index: 1;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(0,212,255,0.15);
+    border: 1px solid var(--accent1);
+    color: var(--accent1);
+    padding: 6px 18px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    animation: fadeDown 0.6s ease;
+  }
+  .hero h1 {
+    font-family: 'Baloo 2', cursive;
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    animation: fadeDown 0.7s ease;
+  }
+  .hero h1 span { color: var(--accent1); }
+  .hero p {
+    color: var(--muted);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 16px auto 0;
+    animation: fadeDown 0.8s ease;
+  }
+
+  /* NAV PILLS */
+  .nav-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    background: rgba(15,25,35,0.95);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-pills a {
+    text-decoration: none;
+    color: var(--muted);
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 7px 16px;
+    border-radius: 50px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    transition: all 0.2s;
+  }
+  .nav-pills a:hover { color: var(--accent1); border-color: var(--accent1); background: rgba(0,212,255,0.1); }
+
+  /* SECTIONS */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 20px; position: relative; z-index: 1; }
+
+  section { padding: 60px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+
+  .section-title {
+    font-family: 'Baloo 2', cursive;
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .section-title span { color: var(--accent1); }
+  .section-subtitle { color: var(--muted); margin-bottom: 36px; font-size: 1rem; }
+
+  /* CARDS */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,212,255,0.1); }
+
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+
+  .card-icon { font-size: 2rem; margin-bottom: 12px; }
+  .card h3 { font-size: 1.1rem; font-weight: 800; margin-bottom: 8px; }
+  .card p { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+
+  .accent1 { border-top: 3px solid var(--accent1); }
+  .accent2 { border-top: 3px solid var(--accent2); }
+  .accent3 { border-top: 3px solid var(--accent3); }
+  .accent4 { border-top: 3px solid var(--accent4); }
+  .accent5 { border-top: 3px solid var(--accent5); }
+
+  /* FORMULA BOX */
+  .formula-box {
+    background: linear-gradient(135deg, rgba(0,212,255,0.08), rgba(199,125,255,0.08));
+    border: 1px solid var(--accent1);
+    border-radius: 16px;
+    padding: 28px;
+    margin: 20px 0;
+    text-align: center;
+  }
+  .formula {
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--accent1);
+    margin: 8px 0;
+  }
+  .formula span.plus { color: var(--muted); margin: 0 8px; }
+  .formula span.green { color: var(--accent4); }
+  .formula span.yellow { color: var(--accent3); }
+  .formula span.pink { color: var(--accent2); }
+
+  /* TABLE */
+  .table-wrap { overflow-x: auto; margin: 20px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  thead th {
+    background: rgba(0,212,255,0.12);
+    color: var(--accent1);
+    font-weight: 800;
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 2px solid var(--accent1);
+  }
+  tbody tr:nth-child(even) { background: rgba(255,255,255,0.02); }
+  tbody td { padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--muted); }
+  tbody td strong { color: var(--text); }
+
+  /* CONTRACTIONS */
+  .contraction-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; margin: 20px 0; }
+  .contraction-chip {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .contraction-chip:hover { border-color: var(--accent5); background: rgba(199,125,255,0.1); transform: scale(1.04); }
+  .contraction-chip .full { color: var(--muted); font-size: 0.75rem; }
+  .contraction-chip .short { color: var(--accent5); font-size: 1.1rem; font-weight: 800; }
+  .contraction-chip .sentence { color: var(--accent4); font-size: 0.72rem; margin-top: 4px; display: none; }
+  .contraction-chip.revealed .sentence { display: block; }
+  .contraction-chip.revealed { border-color: var(--accent4); }
+
+  /* HIGHLIGHT EXAMPLE */
+  .example-sentence {
+    background: var(--card2);
+    border-left: 4px solid var(--accent1);
+    padding: 14px 18px;
+    border-radius: 0 12px 12px 0;
+    margin: 10px 0;
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  .example-sentence .verb { color: var(--accent2); font-weight: 800; }
+  .example-sentence .subject { color: var(--accent3); font-weight: 800; }
+  .example-sentence .note { color: var(--muted); font-size: 0.8rem; display: block; margin-top: 4px; }
+
+  /* TIMELINE USES */
+  .timeline { position: relative; padding-left: 30px; }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px; top: 0; bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent1), var(--accent5));
+  }
+  .timeline-item { position: relative; margin-bottom: 28px; }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -26px; top: 6px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--accent1);
+    border: 2px solid var(--bg);
+  }
+  .timeline-item h4 { font-weight: 800; font-size: 1rem; margin-bottom: 6px; }
+  .timeline-item p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+
+  /* SIGNAL WORDS */
+  .signal-tags { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
+  .signal-tag {
+    background: rgba(255,217,61,0.12);
+    border: 1px solid var(--accent3);
+    color: var(--accent3);
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    animation: popIn 0.3s ease forwards;
+    opacity: 0;
+  }
+
+  /* INTERACTIVE EXERCISES */
+  .exercise-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 24px;
+  }
+  .exercise-box h3 {
+    font-family: 'Baloo 2', cursive;
+    font-size: 1.3rem;
+    font-weight: 800;
+    margin-bottom: 6px;
+  }
+  .exercise-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 50px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .badge-fill { background: rgba(0,212,255,0.15); color: var(--accent1); }
+  .badge-choice { background: rgba(255,107,107,0.15); color: var(--accent2); }
+  .badge-build { background: rgba(107,203,119,0.15); color: var(--accent4); }
+  .badge-sort { background: rgba(255,217,61,0.15); color: var(--accent3); }
+
+  /* Fill blank */
+  .fill-item { margin: 14px 0; font-size: 1rem; line-height: 2; }
+  .fill-item input {
+    background: rgba(0,0,0,0.3);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    padding: 4px 12px;
+    width: 130px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .fill-item input:focus { border-color: var(--accent1); }
+  .fill-item input.correct { border-color: var(--accent4); background: rgba(107,203,119,0.1); }
+  .fill-item input.wrong { border-color: var(--accent2); background: rgba(255,107,107,0.1); }
+  .fill-item .hint { color: var(--muted); font-size: 0.8rem; }
+
+  /* MC Quiz */
+  .mc-question { margin: 16px 0; }
+  .mc-question p { font-size: 1rem; margin-bottom: 10px; font-weight: 700; }
+  .mc-options { display: flex; flex-wrap: wrap; gap: 10px; }
+  .mc-btn {
+    background: var(--card2);
+    border: 2px solid var(--border);
+    color: var(--text);
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .mc-btn:hover:not(:disabled) { border-color: var(--accent1); background: rgba(0,212,255,0.08); }
+  .mc-btn.correct { border-color: var(--accent4); background: rgba(107,203,119,0.15); color: var(--accent4); }
+  .mc-btn.wrong { border-color: var(--accent2); background: rgba(255,107,107,0.15); color: var(--accent2); }
+
+  /* Word order drag */
+  .word-order { margin: 16px 0; }
+  .word-order p { margin-bottom: 10px; font-size: 0.9rem; color: var(--muted); }
+  .word-bank { display: flex; flex-wrap: wrap; gap: 8px; min-height: 50px; background: rgba(0,0,0,0.2); border: 2px dashed var(--border); border-radius: 12px; padding: 10px; }
+  .drop-zone { display: flex; flex-wrap: wrap; gap: 8px; min-height: 50px; background: rgba(0,212,255,0.03); border: 2px dashed var(--accent1); border-radius: 12px; padding: 10px; margin: 10px 0; }
+  .word-token {
+    background: var(--card2);
+    border: 2px solid var(--border);
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+  }
+  .word-token:hover { border-color: var(--accent1); transform: scale(1.05); }
+  .word-token.placed { background: rgba(0,212,255,0.12); border-color: var(--accent1); }
+
+  /* Buttons */
+  .btn {
+    background: var(--accent1);
+    border: none;
+    border-radius: 10px;
+    color: var(--bg);
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    padding: 12px 28px;
+    transition: all 0.2s;
+    margin-top: 16px;
+  }
+  .btn:hover { transform: scale(1.04); box-shadow: 0 0 20px rgba(0,212,255,0.4); }
+  .btn.secondary { background: var(--card2); color: var(--accent1); border: 2px solid var(--accent1); }
+
+  /* Feedback */
+  .feedback { margin-top: 14px; padding: 12px 16px; border-radius: 10px; font-weight: 700; display: none; }
+  .feedback.show { display: block; animation: popIn 0.3s ease; }
+  .feedback.good { background: rgba(107,203,119,0.15); border: 1px solid var(--accent4); color: var(--accent4); }
+  .feedback.bad { background: rgba(255,107,107,0.15); border: 1px solid var(--accent2); color: var(--accent2); }
+
+  /* SCORE COUNTER */
+  .score-bar {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+  }
+  .score-num { font-family: 'Baloo 2', cursive; font-size: 2rem; font-weight: 800; color: var(--accent1); }
+  .score-label { color: var(--muted); font-size: 0.85rem; }
+
+  /* NEGATIVES + QUESTIONS TABS */
+  .tabs { display: flex; gap: 0; margin-bottom: 24px; border-bottom: 2px solid var(--border); }
+  .tab-btn {
+    background: none;
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-family: 'Nunito', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 800;
+    padding: 12px 24px;
+    transition: color 0.2s;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+  }
+  .tab-btn.active { color: var(--accent1); border-bottom-color: var(--accent1); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* Animations */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  /* Reveal animation for signal tags */
+  .signal-tag:nth-child(1) { animation-delay: 0.05s; }
+  .signal-tag:nth-child(2) { animation-delay: 0.1s; }
+  .signal-tag:nth-child(3) { animation-delay: 0.15s; }
+  .signal-tag:nth-child(4) { animation-delay: 0.2s; }
+  .signal-tag:nth-child(5) { animation-delay: 0.25s; }
+  .signal-tag:nth-child(6) { animation-delay: 0.3s; }
+  .signal-tag:nth-child(7) { animation-delay: 0.35s; }
+  .signal-tag:nth-child(8) { animation-delay: 0.4s; }
+  .signal-tag:nth-child(9) { animation-delay: 0.45s; }
+
+  /* Progress */
+  .progress-wrap { background: rgba(255,255,255,0.05); border-radius: 50px; height: 8px; margin-top: 6px; }
+  .progress-bar { background: linear-gradient(to right, var(--accent1), var(--accent5)); border-radius: 50px; height: 8px; transition: width 0.5s ease; }
+
+  /* TIP box */
+  .tip {
+    background: rgba(255,217,61,0.07);
+    border: 1px solid rgba(255,217,61,0.3);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin: 16px 0;
+    font-size: 0.9rem;
+    color: var(--muted);
+  }
+  .tip strong { color: var(--accent3); }
+
+  /* Responsive */
+  @media (max-width: 600px) {
+    .hero h1 { font-size: 2.2rem; }
+    .nav-pills a { font-size: 0.75rem; padding: 6px 12px; }
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--muted);
+    font-size: 0.85rem;
+    position: relative; z-index: 1;
+  }
+  footer span { color: var(--accent1); font-weight: 800; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-badge">📚 English Grammar Guide</div>
+  <h1>The <span>Simple Present</span><br>Complete Guide</h1>
+  <p>Everything you need to know — rules, uses, contractions, and fun exercises to master it!</p>
+</div>
+
+<!-- NAV -->
+<nav class="nav-pills">
+  <a href="#what">What Is It?</a>
+  <a href="#when">When to Use</a>
+  <a href="#how">How to Form</a>
+  <a href="#negative">Negatives</a>
+  <a href="#questions">Questions</a>
+  <a href="#contractions">Contractions</a>
+  <a href="#signals">Signal Words</a>
+  <a href="#exercises">Exercises</a>
+</nav>
+
+<div class="container">
+
+<!-- SECTION 1: WHAT -->
+<section id="what">
+  <div class="section-title">🤔 What is the <span>Simple Present</span>?</div>
+  <p class="section-subtitle">The most common tense in English — you use it every single day!</p>
+
+  <div class="card-grid">
+    <div class="card accent1">
+      <div class="card-icon">🌍</div>
+      <h3>It describes REALITY</h3>
+      <p>Facts, habits, routines, and truths that are always or generally true about the world.</p>
+    </div>
+    <div class="card accent2">
+      <div class="card-icon">🔁</div>
+      <h3>It shows REPETITION</h3>
+      <p>Things that happen again and again — every day, every week, always.</p>
+    </div>
+    <div class="card accent3">
+      <div class="card-icon">⚡</div>
+      <h3>It's the BASE form</h3>
+      <p>The simplest form of the verb. No special endings — except for he/she/it!</p>
+    </div>
+  </div>
+
+  <div class="example-sentence">
+    <span class="subject">The sun</span> <span class="verb">rises</span> in the east.
+    <span class="note">✅ A fact that is always true → Simple Present</span>
+  </div>
+  <div class="example-sentence">
+    <span class="subject">She</span> <span class="verb">studies</span> English every morning.
+    <span class="note">✅ A daily habit → Simple Present</span>
+  </div>
+  <div class="example-sentence">
+    <span class="subject">Water</span> <span class="verb">boils</span> at 100°C.
+    <span class="note">✅ A scientific fact → Simple Present</span>
+  </div>
+</section>
+
+<!-- SECTION 2: WHEN -->
+<section id="when">
+  <div class="section-title">📅 <span>When</span> to Use It</div>
+  <p class="section-subtitle">6 important situations where you MUST use Simple Present</p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <h4>1. 🔁 Habits & Routines</h4>
+      <p>Things you do regularly — every day, every week, often, always.</p>
+      <div class="example-sentence"><span class="subject">I</span> <span class="verb">wake up</span> at 6 every morning. <span class="note">Daily habit ✓</span></div>
+    </div>
+    <div class="timeline-item">
+      <h4>2. 🌎 General Truths & Facts</h4>
+      <p>Things that are always true — science, nature, universal facts.</p>
+      <div class="example-sentence"><span class="subject">Dogs</span> <span class="verb">bark</span>. Birds <span class="verb">fly</span>. The Earth <span class="verb">moves</span> around the sun. <span class="note">Always true ✓</span></div>
+    </div>
+    <div class="timeline-item">
+      <h4>3. ❤️ States of Being (Stative Verbs)</h4>
+      <p>Feelings, thoughts, possession, senses — these verbs almost never use -ing.</p>
+      <div class="example-sentence"><span class="subject">She</span> <span class="verb">loves</span> chocolate. I <span class="verb">know</span> the answer. He <span class="verb">has</span> a car. <span class="note">State verb ✓</span></div>
+    </div>
+    <div class="timeline-item">
+      <h4>4. 🗓️ Fixed Schedules & Timetables</h4>
+      <p>Official schedules — trains, planes, classes, events in the future.</p>
+      <div class="example-sentence"><span class="subject">The train</span> <span class="verb">leaves</span> at 8:30. Class <span class="verb">starts</span> at 7. <span class="note">Fixed schedule ✓</span></div>
+    </div>
+    <div class="timeline-item">
+      <h4>5. 📰 Newspapers & Summaries</h4>
+      <p>Headlines, book summaries, film descriptions.</p>
+      <div class="example-sentence"><span class="subject">The president</span> <span class="verb">signs</span> new law. (Headline) <span class="note">News headline ✓</span></div>
+    </div>
+    <div class="timeline-item">
+      <h4>6. 📖 Instructions & Directions</h4>
+      <p>Recipes, manuals, how-to guides.</p>
+      <div class="example-sentence">First, you <span class="verb">add</span> the eggs. Then you <span class="verb">mix</span> the flour. <span class="note">Instructions ✓</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 3: HOW -->
+<section id="how">
+  <div class="section-title">🔧 <span>How</span> to Form It</div>
+  <p class="section-subtitle">The formula is simple — but watch out for he/she/it!</p>
+
+  <!-- AFFIRMATIVE -->
+  <div class="formula-box">
+    <div style="color:var(--muted);font-size:0.8rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:12px">✅ AFFIRMATIVE (Positive)</div>
+    <div class="formula"><span class="yellow">Subject</span> <span class="plus">+</span> <span class="green">Verb (base)</span></div>
+    <div style="color:var(--muted);font-size:0.85rem;margin-top:8px">BUT: He / She / It → verb + <strong style="color:var(--accent2)">-S</strong></div>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Subject</th><th>Rule</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><strong>I</strong></td><td>base verb</td><td>I <strong>play</strong> chess.</td></tr>
+        <tr><td><strong>You</strong></td><td>base verb</td><td>You <strong>work</strong> hard.</td></tr>
+        <tr><td><strong>We</strong></td><td>base verb</td><td>We <strong>study</strong> English.</td></tr>
+        <tr><td><strong>They</strong></td><td>base verb</td><td>They <strong>like</strong> music.</td></tr>
+        <tr><td><strong>He / She / It</strong></td><td>verb + <strong style="color:var(--accent2)">S</strong></td><td>She <strong>plays</strong>. He <strong>works</strong>.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tip">
+    <strong>⚠️ Special -S rules for He/She/It:</strong><br>
+    • Verbs ending in <strong>-ss, -sh, -ch, -x, -o</strong> → add <strong>-ES</strong>: go→ goes, watch→watches, do→does<br>
+    • Verbs ending in <strong>consonant + Y</strong> → change Y to <strong>-IES</strong>: study→studies, fly→flies<br>
+    • Most other verbs → just add <strong>-S</strong>: like→likes, run→runs
+  </div>
+</section>
+
+<!-- SECTION 4: NEGATIVE -->
+<section id="negative">
+  <div class="section-title">❌ <span>Negatives</span> & Questions</div>
+  <p class="section-subtitle">Use DO/DOES + NOT to make negatives and questions</p>
+
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab(this,'neg')">❌ Negative</button>
+    <button class="tab-btn" onclick="switchTab(this,'ques')">❓ Questions</button>
+    <button class="tab-btn" onclick="switchTab(this,'wh')">🔵 Wh- Questions</button>
+  </div>
+
+  <div id="neg" class="tab-panel active">
+    <div class="formula-box">
+      <div class="formula"><span class="yellow">Subject</span> <span class="plus">+</span> <span class="pink">do/does</span> <span class="plus">+</span> <span class="pink">not</span> <span class="plus">+</span> <span class="green">verb (base)</span></div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Subject</th><th>Helper</th><th>Contraction</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td><strong>I / You / We / They</strong></td><td>do not</td><td>don't</td><td>I <strong>don't like</strong> coffee.</td></tr>
+          <tr><td><strong>He / She / It</strong></td><td>does not</td><td>doesn't</td><td>She <strong>doesn't eat</strong> meat.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip"><strong>💡 Remember:</strong> After does/doesn't, the main verb goes back to BASE form — no extra S!<br>
+    ❌ She doesn't <del>likes</del> → ✅ She doesn't <strong>like</strong></div>
+  </div>
+
+  <div id="ques" class="tab-panel">
+    <div class="formula-box">
+      <div class="formula"><span class="pink">Do/Does</span> <span class="plus">+</span> <span class="yellow">Subject</span> <span class="plus">+</span> <span class="green">verb (base)</span> <span class="plus">+</span> ... ?</div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Helper</th><th>Subject</th><th>Example</th><th>Short Answer</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Do</strong></td><td>I/you/we/they</td><td><strong>Do</strong> you like pizza?</td><td>Yes, I do. / No, I don't.</td></tr>
+          <tr><td><strong>Does</strong></td><td>he/she/it</td><td><strong>Does</strong> she play tennis?</td><td>Yes, she does. / No, she doesn't.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div id="wh" class="tab-panel">
+    <div class="formula-box">
+      <div class="formula"><span class="accent5" style="color:var(--accent5)">Wh-word</span> <span class="plus">+</span> <span class="pink">do/does</span> <span class="plus">+</span> <span class="yellow">subject</span> <span class="plus">+</span> <span class="green">verb</span> <span class="plus">+</span> ... ?</div>
+    </div>
+    <div class="example-sentence"><strong style="color:var(--accent5)">Where</strong> do you live? <span class="note">→ I live in Santa Cruz.</span></div>
+    <div class="example-sentence"><strong style="color:var(--accent5)">What</strong> does she do? <span class="note">→ She teaches English.</span></div>
+    <div class="example-sentence"><strong style="color:var(--accent5)">When</strong> does the class start? <span class="note">→ It starts at 7.</span></div>
+    <div class="example-sentence"><strong style="color:var(--accent5)">Why</strong> do they study at night? <span class="note">→ Because they work in the day.</span></div>
+    <div class="example-sentence"><strong style="color:var(--accent5)">How</strong> do you get to school? <span class="note">→ I take the bus.</span></div>
+  </div>
+</section>
+
+<!-- SECTION 5: CONTRACTIONS -->
+<section id="contractions">
+  <div class="section-title">🔗 <span>Contractions</span></div>
+  <p class="section-subtitle">Short forms we use in speaking and informal writing — click each one to see an example!</p>
+
+  <div class="contraction-grid">
+    <div class="contraction-chip" onclick="revealContraction(this)">
+      <div class="full">do not</div>
+      <div class="short">don't</div>
+      <div class="sentence">I don't speak French.</div>
+    </div>
+    <div class="contraction-chip" onclick="revealContraction(this)">
+      <div class="full">does not</div>
+      <div class="short">doesn't</div>
+      <div class="sentence">He doesn't eat fish.</div>
+    </div>
+    <div class="contraction-chip" onclick="revealContraction(this)">
+      <div class="full">I am</div>
+      <div class="short">I'm</div>
+      <div class="sentence">I'm a student.</div>
+    </div>
+    <div class="contraction-chip" onclick="revealContraction(this)">
+      <div class="full">you are</div>
+      <div class="short">you're</div>
+      <div class="sentence">You're very smart!</div>
+    </div>
+    <div class="contraction-chip" onclick="revealContraction(this)">
+      <div class="full">he is</div>
+      <div class="short">he's</div>
+      <div class="sentence">He's a teacher.</div>
+    </div>
+    <div class="contraction-chip" onclick="revealContraction(this)">
+      <div class="full">she is</div>
+      <div class="short">she's</div>
+      <div class="sentence">She's from Bolivia.</div>
+    </div>
+    <div class="contraction-chip" onclick="revealContraction(this)">
+      <div class="full">it is</div>
+      <div class="short">it's</div>
+      <div class="sentence">It's cold today.</div>
+    </div>
+    <div class="contraction-chip" onclick="revealContraction(this)">
+      <div class="full">we are</div>
+      <div class="short">we're</div>
+      <div class="sentence">We're in class now.</div>
+    </div>
+    <div class="contraction-chip" onclick="revealContraction(this)">
+      <div class="full">they are</div>
+      <div class="short">they're</div>
+      <div class="sentence">They're good friends.</div>
+    </div>
+  </div>
+  <p style="color:var(--muted);font-size:0.85rem;margin-top:8px">👆 Click any card to see it in a real sentence!</p>
+</section>
+
+<!-- SECTION 6: SIGNAL WORDS -->
+<section id="signals">
+  <div class="section-title">🚦 <span>Signal Words</span></div>
+  <p class="section-subtitle">These words are clues! When you see them, use Simple Present.</p>
+
+  <div class="signal-tags" id="signalTags">
+    <span class="signal-tag">always</span>
+    <span class="signal-tag">usually</span>
+    <span class="signal-tag">often</span>
+    <span class="signal-tag">sometimes</span>
+    <span class="signal-tag">rarely</span>
+    <span class="signal-tag">never</span>
+    <span class="signal-tag">every day</span>
+    <span class="signal-tag">every week</span>
+    <span class="signal-tag">on Mondays</span>
+  </div>
+
+  <div class="table-wrap" style="margin-top:20px">
+    <table>
+      <thead><tr><th>Signal Word</th><th>Meaning</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><td><strong>always</strong></td><td>100% of the time</td><td>She <strong>always</strong> arrives early.</td></tr>
+        <tr><td><strong>usually</strong></td><td>most of the time</td><td>I <strong>usually</strong> eat breakfast.</td></tr>
+        <tr><td><strong>often</strong></td><td>many times</td><td>We <strong>often</strong> play football.</td></tr>
+        <tr><td><strong>sometimes</strong></td><td>some of the time</td><td>He <strong>sometimes</strong> forgets.</td></tr>
+        <tr><td><strong>rarely / seldom</strong></td><td>not many times</td><td>I <strong>rarely</strong> watch TV.</td></tr>
+        <tr><td><strong>never</strong></td><td>0% of the time</td><td>She <strong>never</strong> lies.</td></tr>
+        <tr><td><strong>every day/week/year</strong></td><td>regular time</td><td>They run <strong>every morning</strong>.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- SECTION 7: EXERCISES -->
+<section id="exercises">
+  <div class="section-title">🎮 <span>Exercises</span></div>
+  <p class="section-subtitle">Let's practice! Do each exercise and check your answers.</p>
+
+  <!-- SCORE BAR -->
+  <div class="score-bar">
+    <div>
+      <div class="score-num" id="scoreNum">0</div>
+      <div class="score-label">points</div>
+    </div>
+    <div style="flex:1">
+      <div style="color:var(--text);font-weight:700;font-size:0.9rem;">Your Progress</div>
+      <div class="progress-wrap">
+        <div class="progress-bar" id="progressBar" style="width:0%"></div>
+      </div>
+    </div>
+    <div>
+      <div style="color:var(--muted);font-size:0.85rem;">Keep going! 💪</div>
+    </div>
+  </div>
+
+  <!-- EXERCISE 1: FILL IN THE BLANK -->
+  <div class="exercise-box">
+    <span class="exercise-badge badge-fill">Fill in the Blank</span>
+    <h3>Exercise 1 – Correct Form</h3>
+    <p style="color:var(--muted);font-size:0.9rem;margin-bottom:16px">Write the correct form of the verb in parentheses. Don't forget the -S for he/she/it!</p>
+
+    <div class="fill-item">
+      <span>1. She _____</span>
+      <input type="text" id="f1" placeholder="(study)" oninput="checkFill(this,'studies','f1fb')">
+      <span>every night.</span>
+      <span class="hint"> (study)</span>
+    </div>
+    <div id="f1fb" class="feedback"></div>
+
+    <div class="fill-item">
+      <span>2. They _____</span>
+      <input type="text" id="f2" placeholder="(play)" oninput="checkFill(this,'play','f2fb')">
+      <span>football on Saturdays.</span>
+      <span class="hint"> (play)</span>
+    </div>
+    <div id="f2fb" class="feedback"></div>
+
+    <div class="fill-item">
+      <span>3. He _____</span>
+      <input type="text" id="f3" placeholder="(go)" oninput="checkFill(this,'goes','f3fb')">
+      <span>to school by bus.</span>
+      <span class="hint"> (go)</span>
+    </div>
+    <div id="f3fb" class="feedback"></div>
+
+    <div class="fill-item">
+      <span>4. We _____</span>
+      <input type="text" id="f4" placeholder="(like)" oninput="checkFill(this,'like','f4fb')">
+      <span>English class!</span>
+      <span class="hint"> (like)</span>
+    </div>
+    <div id="f4fb" class="feedback"></div>
+
+    <div class="fill-item">
+      <span>5. My dog _____</span>
+      <input type="text" id="f5" placeholder="(eat)" oninput="checkFill(this,'eats','f5fb')">
+      <span>a lot.</span>
+      <span class="hint"> (eat)</span>
+    </div>
+    <div id="f5fb" class="feedback"></div>
+
+    <div class="fill-item">
+      <span>6. I usually _____</span>
+      <input type="text" id="f6" placeholder="(drink)" oninput="checkFill(this,'drink','f6fb')">
+      <span>water in the morning.</span>
+      <span class="hint"> (drink)</span>
+    </div>
+    <div id="f6fb" class="feedback"></div>
+  </div>
+
+  <!-- EXERCISE 2: MULTIPLE CHOICE -->
+  <div class="exercise-box">
+    <span class="exercise-badge badge-choice">Multiple Choice</span>
+    <h3>Exercise 2 – Pick the Right Answer</h3>
+
+    <div class="mc-question" id="mc1">
+      <p>1. Maria _____ Spanish at home.</p>
+      <div class="mc-options">
+        <button class="mc-btn" onclick="checkMC(this,'speaks','mc1')">speak</button>
+        <button class="mc-btn" onclick="checkMC(this,'speaks','mc1')">speaks</button>
+        <button class="mc-btn" onclick="checkMC(this,'speaks','mc1')">speaked</button>
+        <button class="mc-btn" onclick="checkMC(this,'speaks','mc1')">is speak</button>
+      </div>
+    </div>
+
+    <div class="mc-question" id="mc2">
+      <p>2. They _____ play basketball on Fridays.</p>
+      <div class="mc-options">
+        <button class="mc-btn" onclick="checkMC(this,'don\'t','mc2')">doesn't</button>
+        <button class="mc-btn" onclick="checkMC(this,'don\'t','mc2')">don't</button>
+        <button class="mc-btn" onclick="checkMC(this,'don\'t','mc2')">not</button>
+        <button class="mc-btn" onclick="checkMC(this,'don\'t','mc2')">isn't</button>
+      </div>
+    </div>
+
+    <div class="mc-question" id="mc3">
+      <p>3. _____ your brother like chess?</p>
+      <div class="mc-options">
+        <button class="mc-btn" onclick="checkMC(this,'Does','mc3')">Do</button>
+        <button class="mc-btn" onclick="checkMC(this,'Does','mc3')">Does</button>
+        <button class="mc-btn" onclick="checkMC(this,'Does','mc3')">Is</button>
+        <button class="mc-btn" onclick="checkMC(this,'Does','mc3')">Are</button>
+      </div>
+    </div>
+
+    <div class="mc-question" id="mc4">
+      <p>4. The bus _____ at 7:00 AM every day.</p>
+      <div class="mc-options">
+        <button class="mc-btn" onclick="checkMC(this,'leaves','mc4')">leave</button>
+        <button class="mc-btn" onclick="checkMC(this,'leaves','mc4')">left</button>
+        <button class="mc-btn" onclick="checkMC(this,'leaves','mc4')">leaves</button>
+        <button class="mc-btn" onclick="checkMC(this,'leaves','mc4')">is leaving</button>
+      </div>
+    </div>
+
+    <div class="mc-question" id="mc5">
+      <p>5. She _____ coffee. She prefers tea.</p>
+      <div class="mc-options">
+        <button class="mc-btn" onclick="checkMC(this,'doesn\'t drink','mc5')">don't drink</button>
+        <button class="mc-btn" onclick="checkMC(this,'doesn\'t drink','mc5')">doesn't drinks</button>
+        <button class="mc-btn" onclick="checkMC(this,'doesn\'t drink','mc5')">doesn't drink</button>
+        <button class="mc-btn" onclick="checkMC(this,'doesn\'t drink','mc5')">not drink</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXERCISE 3: WORD ORDER -->
+  <div class="exercise-box">
+    <span class="exercise-badge badge-build">Build a Sentence</span>
+    <h3>Exercise 3 – Put the Words in Order</h3>
+    <p style="color:var(--muted);font-size:0.9rem;margin-bottom:20px">Click the words in the correct order to build the sentence!</p>
+
+    <!-- Sentence 1 -->
+    <div class="word-order" id="wo1">
+      <p>🔹 Build: <em>"She always drinks water in the morning."</em></p>
+      <div class="word-bank" id="bank1">
+        <span class="word-token" onclick="moveToken(this,'bank1','zone1')">water</span>
+        <span class="word-token" onclick="moveToken(this,'bank1','zone1')">She</span>
+        <span class="word-token" onclick="moveToken(this,'bank1','zone1')">the morning</span>
+        <span class="word-token" onclick="moveToken(this,'bank1','zone1')">always</span>
+        <span class="word-token" onclick="moveToken(this,'bank1','zone1')">in</span>
+        <span class="word-token" onclick="moveToken(this,'bank1','zone1')">drinks</span>
+      </div>
+      <div class="drop-zone" id="zone1" onclick="moveBack(event,'zone1','bank1')">
+        <span style="color:var(--muted);font-size:0.8rem;pointer-events:none" id="zone1hint">← Click words above to add them here</span>
+      </div>
+      <button class="btn secondary" onclick="checkWordOrder('zone1','She always drinks water in the morning','wo1fb1')">Check ✓</button>
+      <div id="wo1fb1" class="feedback"></div>
+    </div>
+
+    <!-- Sentence 2 -->
+    <div class="word-order" id="wo2" style="margin-top:24px">
+      <p>🔹 Build: <em>"Do you speak English at school?"</em></p>
+      <div class="word-bank" id="bank2">
+        <span class="word-token" onclick="moveToken(this,'bank2','zone2')">English</span>
+        <span class="word-token" onclick="moveToken(this,'bank2','zone2')">Do</span>
+        <span class="word-token" onclick="moveToken(this,'bank2','zone2')">at school</span>
+        <span class="word-token" onclick="moveToken(this,'bank2','zone2')">you</span>
+        <span class="word-token" onclick="moveToken(this,'bank2','zone2')">speak</span>
+      </div>
+      <div class="drop-zone" id="zone2" onclick="moveBack(event,'zone2','bank2')">
+        <span style="color:var(--muted);font-size:0.8rem;pointer-events:none" id="zone2hint">← Click words above to add them here</span>
+      </div>
+      <button class="btn secondary" onclick="checkWordOrder('zone2','Do you speak English at school','wo2fb1')">Check ✓</button>
+      <div id="wo2fb1" class="feedback"></div>
+    </div>
+  </div>
+
+  <!-- EXERCISE 4: NEGATIVE TRANSFORMER -->
+  <div class="exercise-box">
+    <span class="exercise-badge badge-sort">Transform It!</span>
+    <h3>Exercise 4 – Make It Negative</h3>
+    <p style="color:var(--muted);font-size:0.9rem;margin-bottom:16px">Rewrite each sentence as a negative. Use don't or doesn't.</p>
+
+    <div id="negEx">
+      <div style="margin:16px 0">
+        <div class="example-sentence" style="margin-bottom:8px">➡️ I eat breakfast every day.</div>
+        <input type="text" id="neg1" placeholder="I ..." style="background:rgba(0,0,0,0.3);border:2px solid var(--border);border-radius:8px;color:var(--text);font-family:'Nunito',sans-serif;font-size:0.95rem;padding:10px 14px;width:100%;outline:none" oninput="checkNegative(this,'i don\'t eat breakfast every day','neg1fb')">
+        <div id="neg1fb" class="feedback"></div>
+      </div>
+      <div style="margin:16px 0">
+        <div class="example-sentence" style="margin-bottom:8px">➡️ She plays the piano.</div>
+        <input type="text" id="neg2" placeholder="She ..." style="background:rgba(0,0,0,0.3);border:2px solid var(--border);border-radius:8px;color:var(--text);font-family:'Nunito',sans-serif;font-size:0.95rem;padding:10px 14px;width:100%;outline:none" oninput="checkNegative(this,'she doesn\'t play the piano','neg2fb')">
+        <div id="neg2fb" class="feedback"></div>
+      </div>
+      <div style="margin:16px 0">
+        <div class="example-sentence" style="margin-bottom:8px">➡️ They go to the gym on Sundays.</div>
+        <input type="text" id="neg3" placeholder="They ..." style="background:rgba(0,0,0,0.3);border:2px solid var(--border);border-radius:8px;color:var(--text);font-family:'Nunito',sans-serif;font-size:0.95rem;padding:10px 14px;width:100%;outline:none" oninput="checkNegative(this,'they don\'t go to the gym on sundays','neg3fb')">
+        <div id="neg3fb" class="feedback"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXERCISE 5: QUICK QUIZ -->
+  <div class="exercise-box">
+    <span class="exercise-badge badge-choice">Quick Quiz</span>
+    <h3>Exercise 5 – True or False?</h3>
+    <p style="color:var(--muted);font-size:0.9rem;margin-bottom:16px">Is each sentence correct or incorrect?</p>
+
+    <div id="tf-exercises"></div>
+  </div>
+
+</section>
+
+</div><!-- /container -->
+
+<footer>
+  Made with ❤️ for English learners · Simple Present Tense · <span>Complete Guide</span>
+</footer>
+
+<script>
+// Score system
+let score = 0;
+let answered = new Set();
+
+function addScore(id, points) {
+  if (!answered.has(id)) {
+    answered.add(id);
+    score += points;
+    document.getElementById('scoreNum').textContent = score;
+    let pct = Math.min(100, (score / 50) * 100);
+    document.getElementById('progressBar').style.width = pct + '%';
+  }
+}
+
+// Fill in blank
+function checkFill(input, correct, fbId) {
+  const val = input.value.trim().toLowerCase();
+  const fb = document.getElementById(fbId);
+  if (val === correct.toLowerCase()) {
+    input.classList.remove('wrong'); input.classList.add('correct');
+    fb.textContent = '🎉 Correct! Great job!';
+    fb.className = 'feedback good show';
+    addScore(fbId, 2);
+  } else if (val.length > 0) {
+    input.classList.remove('correct'); input.classList.add('wrong');
+    fb.textContent = '❌ Try again! Hint: ' + (input.id === 'f1' ? 'y → ies' : input.id === 'f3' ? 'go → goes (irregular!)' : 'Check the subject!');
+    fb.className = 'feedback bad show';
+  } else {
+    input.classList.remove('correct','wrong');
+    fb.className = 'feedback';
+  }
+}
+
+// Multiple choice
+function checkMC(btn, correct, qId) {
+  const question = document.getElementById(qId);
+  const allBtns = question.querySelectorAll('.mc-btn');
+  allBtns.forEach(b => b.disabled = true);
+  if (btn.textContent.trim() === correct) {
+    btn.classList.add('correct');
+    addScore(qId, 2);
+    // show a small success tooltip
+    btn.textContent += ' ✓';
+  } else {
+    btn.classList.add('wrong');
+    btn.textContent += ' ✗';
+    allBtns.forEach(b => { if (b.textContent.includes(correct)) b.classList.add('correct'); });
+  }
+}
+
+// Word order
+function moveToken(token, fromId, toId) {
+  const to = document.getElementById(toId);
+  const hint = document.getElementById(toId + 'hint');
+  if (hint) hint.style.display = 'none';
+  token.classList.add('placed');
+  token.onclick = null;
+  to.appendChild(token);
+  setTimeout(() => {
+    token.onclick = function() { moveBack2(token, toId, fromId); };
+  }, 50);
+}
+
+function moveBack2(token, fromId, toId) {
+  token.classList.remove('placed');
+  document.getElementById(toId).appendChild(token);
+  token.onclick = function() { moveToken(token, toId, fromId); };
+  const zone = document.getElementById(fromId);
+  const tokens = zone.querySelectorAll('.word-token');
+  if (tokens.length === 0) {
+    const hint = document.getElementById(fromId + 'hint');
+    if (hint) hint.style.display = '';
+  }
+}
+
+function moveBack(e, zoneId, bankId) {
+  // handled by individual token clicks
+}
+
+function checkWordOrder(zoneId, correct, fbId) {
+  const zone = document.getElementById(zoneId);
+  const tokens = Array.from(zone.querySelectorAll('.word-token')).map(t => t.textContent.replace(' ✓','').replace(' ✗','').trim());
+  const answer = tokens.join(' ').toLowerCase().replace(/\?/g,'').replace(/\./g,'').trim();
+  const correctClean = correct.toLowerCase().replace(/\?/g,'').replace(/\./g,'').trim();
+  const fb = document.getElementById(fbId);
+  if (answer === correctClean) {
+    fb.textContent = '🎉 Perfect sentence! You got it!';
+    fb.className = 'feedback good show';
+    addScore(fbId, 3);
+  } else if (tokens.length === 0) {
+    fb.textContent = '⚠️ Please drag the words first!';
+    fb.className = 'feedback bad show';
+  } else {
+    fb.textContent = '❌ Not quite. Try a different order! Tip: Subject → Adverb → Verb → Object → Place';
+    fb.className = 'feedback bad show';
+  }
+}
+
+// Negative exercise
+function checkNegative(input, correct, fbId) {
+  const val = input.value.trim().toLowerCase().replace(/\./g,'').replace(/\?/g,'');
+  const fb = document.getElementById(fbId);
+  if (val === correct) {
+    fb.textContent = '✅ Excellent! Perfect negative sentence!';
+    fb.className = 'feedback good show';
+    input.style.borderColor = 'var(--accent4)';
+    addScore(fbId, 3);
+  } else if (val.length > 2) {
+    fb.textContent = '❌ Not quite right. Remember: don\'t (I/you/we/they) or doesn\'t (he/she/it) + base verb.';
+    fb.className = 'feedback bad show';
+    input.style.borderColor = 'var(--accent2)';
+  } else {
+    fb.className = 'feedback';
+    input.style.borderColor = '';
+  }
+}
+
+// True/False exercise
+const tfData = [
+  { s: 'She don\'t like cats.', correct: false, explanation: 'She → use DOESN\'T (she doesn\'t like)' },
+  { s: 'He works every day.', correct: true, explanation: 'Correct! He → works (add -s)' },
+  { s: 'They doesn\'t play chess.', correct: false, explanation: 'They → use DON\'T (they don\'t play)' },
+  { s: 'Water freeze at 0°C.', correct: false, explanation: 'Water (it) → freezes (add -s)' },
+  { s: 'I always drink coffee.', correct: true, explanation: 'Correct! I → drink (no -s)' },
+  { s: 'Does she speaks English?', correct: false, explanation: 'After does → base verb: Does she SPEAK?' },
+];
+
+const tfContainer = document.getElementById('tf-exercises');
+tfData.forEach((item, i) => {
+  const div = document.createElement('div');
+  div.style.cssText = 'margin:14px 0;padding:14px 16px;background:var(--card2);border-radius:12px;border:1px solid var(--border);';
+  div.innerHTML = `
+    <div style="font-weight:700;margin-bottom:10px">${i+1}. "${item.s}"</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="mc-btn" onclick="checkTF(this,${item.correct},true,'tffb${i}','${item.explanation.replace(/'/g,"\\'")}')">✅ Correct</button>
+      <button class="mc-btn" onclick="checkTF(this,${item.correct},false,'tffb${i}','${item.explanation.replace(/'/g,"\\'")}')">❌ Incorrect</button>
+    </div>
+    <div id="tffb${i}" class="feedback"></div>
+  `;
+  tfContainer.appendChild(div);
+});
+
+function checkTF(btn, isCorrect, userSaid, fbId, explanation) {
+  const parent = btn.parentElement;
+  const allBtns = parent.querySelectorAll('.mc-btn');
+  allBtns.forEach(b => b.disabled = true);
+  const fb = document.getElementById(fbId);
+  if (isCorrect === userSaid) {
+    btn.classList.add('correct');
+    fb.textContent = '🎉 ' + explanation;
+    fb.className = 'feedback good show';
+    addScore(fbId, 2);
+  } else {
+    btn.classList.add('wrong');
+    fb.textContent = '❌ ' + explanation;
+    fb.className = 'feedback bad show';
+    allBtns.forEach(b => {
+      if ((b.textContent.includes('Correct') && isCorrect) || (b.textContent.includes('Incorrect') && !isCorrect)) {
+        b.classList.add('correct');
+      }
+    });
+  }
+}
+
+// Contractions
+function revealContraction(chip) {
+  chip.classList.toggle('revealed');
+}
+
+// Tabs
+function switchTab(btn, panelId) {
+  const tabs = btn.parentElement.querySelectorAll('.tab-btn');
+  tabs.forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  const section = btn.closest('section');
+  section.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById(panelId).classList.add('active');
+}
+
+// Animate signal tags on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.querySelectorAll('.signal-tag').forEach(tag => {
+        tag.style.animationPlayState = 'running';
+      });
+    }
+  });
+}, { threshold: 0.3 });
+document.getElementById('signalTags').querySelectorAll('.signal-tag').forEach(tag => {
+  tag.style.animationPlayState = 'paused';
+});
+observer.observe(document.getElementById('signalTags'));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+</body>
+</html>
